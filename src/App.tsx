@@ -15,10 +15,12 @@ export const App: React.FC = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [filterMethod, setFilterMethod] = useState<GoodsFilter | undefined>();
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     if (!filterMethod) {
       return;
     }
+
     setIsLoading(true);
     setErrorMsg('');
     let res: Promise<Good[]>;
